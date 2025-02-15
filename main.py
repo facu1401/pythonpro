@@ -1,9 +1,20 @@
-# Description: Generador de contraseñas aleatorias
+# Generador de contraseñas aleatorias
 import random
 
 caract = "+-/*!&$#?=@abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
-longitud = int(input("Indique la longitud de la contraseña: "))
-password = ""
-for i in range(longitud):
-    password += random.choice(caract)
-print(password)
+
+while True:
+    longitud = int(input("Indique la longitud de la contraseña (0 para salir): "))
+    
+    if longitud == 0:
+        print("Saliendo del generador...")
+        break 
+    
+    
+    password = ""
+    i = 0
+    while i < longitud:
+        password += random.choice(caract)
+        i += 1
+
+    print(password)  
